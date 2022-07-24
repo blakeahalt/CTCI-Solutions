@@ -36,60 +36,62 @@ function zeroMatrix(matrix){
      console.log(testMatrix);
      zeroMatrix(testMatrix);
      console.log(testMatrix);
-     // 1st SOLUTION - DOES NOT RUN CORRECTLY BC MAP UPDATES LAST PROPERTY 'IN'...
-     // ...a row with more than one zero only sets to the 'last zero' but none previous
-     // function zeroMatrix(matrix) {
-     //   let matrixMap = new Map()
-     
-     //   for (i = 0; i < matrix.length; i++) {
-     //     for (j = 0; j < matrix[0].length; j++) {
-     //       if (matrix[i][j] === 0) {
-     //         temp = matrixMap.set(i,j) 
-     //       }
-     //     }
-     //   }
-     
-     //   for ([key, value] of matrixMap.entries()) {
-     //     for (i = 0; i < matrix.length; i++) {
-     //       for (j = 0; j < matrix[0].length; j++) {
-     //         if (matrix[key][value] === [0][0]) {
-     //           matrix[i][value] = 0                        // creates column of zeros
-     //         } if (matrix[key][value] === [0][0]) {
-     //           matrix[key][j] = 0                          // creates row of zeros
-     //       }
-     //     }
-     //   }
-     // }
-     // return matrix
-     // }
-     // // Testing
-     // let testMatrix = [
-     //   [1, 1, 1, 1],
-     //   [0, 0, 0, 1],
-     //   [1, 1, 1, 1],
-     //   [1, 1, 1, 1],
-     //   [1, 1, 1, 1],
-     //   [1, 1, 1, 1]
-     // ];
-     
-     // // console.log('before');
-     // // printMatrix(testMatrix);
-     
-     // // zeroMatrix(testMatrix);
-     // // console.log('result')
-     // console.log(testMatrix)
-     // console.log(zeroMatrix(testMatrix))
-     
-     // // console.log('after');
-     // // printMatrix(testMatrix);
-     
-     // // function should mutate the matrix to the following:
-     // // [
-     // //   [1, 0, 1, 1],
-     // //   [1, 0, 1, 1],
-     // //   [0, 0, 0, 0],
-     // //   [1, 0, 1, 1],
-     // //   [1, 0, 1, 1],
-     // //   [1, 0, 1, 1]
-     // // ]
-     
+
+
+  // 1st SOLUTION - DOES NOT RUN CORRECTLY BC MAP UPDATES LAST PROPERTY 'IN'...
+  // ...a row with more than one zero only sets to the 'last zero' but none previous
+  // function zeroMatrix(matrix) {
+  //   let matrixMap = new Map()
+  
+  //   for (i = 0; i < matrix.length; i++) {
+  //     for (j = 0; j < matrix[0].length; j++) {
+  //       if (matrix[i][j] === 0) {
+  //         temp = matrixMap.set(i,j) 
+  //       }
+  //     }
+  //   }
+  
+  //   for ([key, value] of matrixMap.entries()) {
+  //     for (i = 0; i < matrix.length; i++) {
+  //       for (j = 0; j < matrix[0].length; j++) {
+  //         if (matrix[key][value] === [0][0]) {
+  //           matrix[i][value] = 0                        // creates column of zeros
+  //         } if (matrix[key][value] === [0][0]) {
+  //           matrix[key][j] = 0                          // creates row of zeros
+  //       }
+  //     }
+  //   }
+  // }
+  // return matrix
+  // }
+  // // Testing
+  // let testMatrix = [
+  //   [1, 1, 1, 1],
+  //   [0, 0, 0, 1],
+  //   [1, 1, 1, 1],
+  //   [1, 1, 1, 1],
+  //   [1, 1, 1, 1],
+  //   [1, 1, 1, 1]
+  // ];
+  
+  // // console.log('before');
+  // // printMatrix(testMatrix);
+  
+  // // zeroMatrix(testMatrix);
+  // // console.log('result')
+  // console.log(testMatrix)
+  // console.log(zeroMatrix(testMatrix))
+  
+  // // console.log('after');
+  // // printMatrix(testMatrix);
+  
+  // // function should mutate the matrix to the following:
+  // // [
+  // //   [1, 0, 1, 1],
+  // //   [1, 0, 1, 1],
+  // //   [0, 0, 0, 0],
+  // //   [1, 0, 1, 1],
+  // //   [1, 0, 1, 1],
+  // //   [1, 0, 1, 1]
+  // // ]
+  
