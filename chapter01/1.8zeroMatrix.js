@@ -2,8 +2,8 @@
 function zeroMatrix(matrix){
        let zeroRow = {};
        let zeroCol = {};
-       for(let i=0;i<matrix.length;i++){
-         for(let j=0;j<matrix[i].length;j++){
+       for(i=0;i<matrix.length;i++){
+         for(j=0;j<matrix[i].length;j++){
            if(matrix[i][j]===0){
              zeroRow[i] = true;
              zeroCol[j] = true;
@@ -14,14 +14,14 @@ function zeroMatrix(matrix){
        for(i=0; i<matrix[row].length; i++){
          matrix[row][i] =0;                  
        }
-         console.log(zeroRow)
+        //  console.log(zeroRow)
        }
        for(col in zeroCol){                      // if zeroCol is true: turn that column into zeros
          for(i=0; i<matrix.length; i++){
            matrix[i][col] = 0;
          }
        }
-       console.log(zeroCol)
+      //  console.log(zeroCol)
      }
      
      let testMatrix = [
