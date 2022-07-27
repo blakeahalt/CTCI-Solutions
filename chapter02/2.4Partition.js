@@ -65,56 +65,45 @@ class Node {
 // const i = new Node("i")
 // const j = new Node("j")
 
-// a.next = b
-// b.next = c
-// c.next = d
-// d.next = e
-// e.next = f
-// f.next = g
-// g.next = h
-// h.next = i
-// i.next = j
+const a = new Node(3)
+const b = new Node(6)
+const c = new Node(1)
+const d = new Node(12)
+const e = new Node(5)
+const f = new Node(8)
+const g = new Node(2)
+const h = new Node(4)
+const i = new Node(9)
+const j = new Node(7)
 
-
-// const deleteValue = (head, target) => {
-// 	if (head === target) {
-// 		return head.next
-// 	}
-// 	let prev = null
-// 	let curr = head
-// 	while (curr !== null) {
-// 		if (curr.val === target) {
-// 		prev.next = curr.next
-// 		}
-// 		prev = curr
-// 		curr = curr.next
-	
-// 	}
-// 	return head
-// }
-
-// // Iterative reverse linked list
-// const IterativeReverseList = (head) => {
-// 	let prev = null
-// 	// let current = head
-
-// 	while (head !== null) {
-// 		const next = head.next
-// 		head.next = prev
-// 		prev = head
-// 		head = next
-// 	}
-// return prev
-// }
-
-// // Recursive reverse linked list
-// const recursiveReverseList = (head, prev = null) => {
-// 	if (head === null) return prev;
-// 	const next = head.next
-// 	head.next = prev
-// 	return reverseList(next, head)
-// }
-
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+e.next = f
+f.next = g
+g.next = h
+h.next = i
+i.next = j
+     
+//  var a = new LinkedList(3);
+//  var b = new LinkedList(5);
+//  var c = new LinkedList(8);
+//  var d = new LinkedList(5);
+//  var e = new LinkedList(10);
+//  var f = new LinkedList(2);
+//  var g = new LinkedList(1);
+//  var h = new LinkedList(6);
+//  var i = new LinkedList(21);
+ 
+//  a.next = b;
+//  b.next = c;
+//  c.next = d;
+//  d.next = e;
+//  e.next = f;
+//  f.next = g;
+//  g.next = h;
+//  h.next = i;
 
 /* 
 Given a linked list and a value x, partition it such that all nodes less than x come 
@@ -128,30 +117,55 @@ Output: [1,2,2,4,3,5]
 // const LinkedList = require("../util/LinkedListX");
 
 
-function partition(node, x) {
-  const beforeHead = new LinkedList("Filler");
-  const afterHead = new LinkedList("Filler");
+const partition = (head1, head2) => {
+  // const beforeHead = new Node();
+  // const afterHead = new Node();
 
-  let before = beforeHead;
-  let after = afterHead;
+  // let before = beforeHead;
+  // let after = afterHead;
+  let tail = head1
+  let current1 = head1.next
+  let current2 = head2
+  let count = 0
 
-  while (node) {
-    if (node.data < x) {
-      before.next = node;
-      before = before.next;
+  while (current1 !== null && current2 !== null) {
+    if (count % 2 === 0) {
+      tail.next = current1
+      current1 = current1.next
     } else {
-      after.next = node;
-      after = after.next;
+      tail.next = current2
+      current2 = current2.next
     }
-
-    node = node.next;
+    tail = tail.next
+    count += 1
   }
-
-  before.next = afterHead.next;
-  after.next = null;
-
-  return beforeHead.next;
+  
+  if (current1 !== null) tail.next = current1
+  if (current2 !== null) tail.next = current2
+  // if (current1.next === null && current2.next === null) {
+  // }
+  return tail
 }
+
+
+
+//   while (node) {
+//     if (node.data < x) {
+//       before.next = node;
+//       before = before.next;
+//     } else {
+//       after.next = node;
+//       after = after.next;
+//     }
+
+//     node = node.next;
+//   }
+
+//   before.next = afterHead.next;
+//   after.next = null;
+
+//   return beforeHead.next;
+// }
 	
 const print = (node) => {
   if (node === null) return;
@@ -159,7 +173,7 @@ const print = (node) => {
   print(node.next)
 }
 
-print(a)
+// print(a)
 
 // const newHead = IterativeReverseList(a)		// working
 // const newHead = deleteValue(a, "d")	// working
@@ -167,7 +181,7 @@ print(a)
 const newHead = partition(a,e)	
 
 console.log('-')
-console.log(partition(a,e));
+// console.log(partition(a,f));
 print(newHead)
 
      
@@ -183,26 +197,25 @@ print(newHead)
     //    }
     //  };
      
-     var a = new LinkedList(3);
-     var b = new LinkedList(5);
-     var c = new LinkedList(8);
-     var d = new LinkedList(5);
-     var e = new LinkedList(10);
-     var f = new LinkedList(2);
-     var g = new LinkedList(1);
-     var h = new LinkedList(6);
-     var i = new LinkedList(21);
+    //  var a = new LinkedList(3);
+    //  var b = new LinkedList(5);
+    //  var c = new LinkedList(8);
+    //  var d = new LinkedList(5);
+    //  var e = new LinkedList(10);
+    //  var f = new LinkedList(2);
+    //  var g = new LinkedList(1);
+    //  var h = new LinkedList(6);
+    //  var i = new LinkedList(21);
      
-     a.next = b;
-     b.next = c;
-     c.next = d;
-     d.next = e;
-     e.next = f;
-     f.next = g;
-     g.next = h;
-     h.next = i;
-     i.next = j;
+    //  a.next = b;
+    //  b.next = c;
+    //  c.next = d;
+    //  d.next = e;
+    //  e.next = f;
+    //  f.next = g;
+    //  g.next = h;
+    //  h.next = i;
      
-    //  var newa = partition(a, 5);
-    //  printList(newa);
+    //  var newa = partition(2,8);
+    //  print(newa);
      

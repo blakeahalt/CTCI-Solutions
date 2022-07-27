@@ -79,36 +79,36 @@ c.next = d
 d.next = e
 
 // OTHER SOLUTION - CODERBYTE
-// const deleteMidValue = (head, target) => {
-//   if (head === target) {
-//     return head.next
-//   }
-//   let prev = null
-//   let curr = head
-//   while (curr !== null) {
-//     if (curr.val === target) {
-//       prev.next = curr.next
-//     }
-//     prev = curr
-//     curr = curr.next
+const deleteMidValue = (head, target) => {
+  if (head === target) {
+    return head.next
+  }
+  let prev = null
+  let curr = head
+  while (curr !== null) {
+    if (curr.val === target) {
+      prev.next = curr.next
+    }
+    prev = curr
+    curr = curr.next
 
-// }
-// return head
-// }
-
-
-const reverseList = (head) => {
-	let prev = null
-	let current = head
-
-	while (current !== null) {
-		const next = current.next
-		current.next = prev
-		prev = current
-		current = next
-	}
-return prev
 }
+return head
+}
+
+
+// const reverseList = (head) => {
+// 	let prev = null
+// 	let current = head
+
+// 	while (current !== null) {
+// 		const next = current.next
+// 		current.next = prev
+// 		prev = current
+// 		current = next
+// 	}
+// return prev
+// }
 	
 
 const print = (node) => {
@@ -119,7 +119,7 @@ const print = (node) => {
 
 print(a)
 
-const newHead = reverseList(a)
+const newHead = deleteMidValue(a, "c")
 
 console.log('-')
 // console.log(deleteMidValue(a));

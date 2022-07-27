@@ -1,11 +1,3 @@
-/* 
-Given two numbers represented by two lists, write a function that adds the two numbers 
-and return the sum as a linked list. The digits are stored in reverse order.
-EXAMPLE
-Input: [7,1,6] + [5,9,2]
-Output: [2,1,9] --> 617 + 295 = 912
-*/
-
 class Node {
 	constructor(val) {
 		this.val = val;
