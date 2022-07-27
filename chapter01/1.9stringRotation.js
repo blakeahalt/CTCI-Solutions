@@ -27,102 +27,107 @@ function isSubstring(str1, str2) {
         charMatch[char] = true
         // console.log(Object.keys(charMatch).length);
 
-        for(char in charMatch){    
+        for (char in charMatch) {
           //  if (char.length > 1) {
-            console.log(char);
-            let rotated = string2.slice(char) + string2.slice(0,char)
-            // for (char in charMatch) {
+          // console.log(char);
+          let rotated = string2.slice(char) + string2.slice(0, char)
+          // for (char in charMatch) {
+          // while (rotated === string1) {
+          if (rotated === string1) {
+            return "\n" + rotated + " is a rotation of " + "\n" + string1
+          }
+          while (rotated === string1) {
             if (rotated === string1) {
               return "\n" + rotated + " is a rotation of " + "\n" + string1
-            } else if (rotated !== string1) {
-              char ++
-              if (rotated === string1) {
-                  return "\n" + rotated + " is a rotation of " + "\n" + string1
-                } 
-                // } else {
-                //   return "\n" +  rotated + " is not a rotation of " + "\n" + string1
-                // }
-              
-            } else {
-              return "\n" +  rotated + " is not a rotation of " + "\n" + string1
-              // console.log(rotated);
-
+            }
+            char++
+            return "\n" + rotated + " is NOT a rotation of " + "\n" + string1
           }
-        // }
-        // if (char.length === 1) {
-        //     let rotated = string2.slice(char) + string2.slice(0,char)
-        //     // console.log(rotated);
-        //     if (rotated === string1) {
-        //         return "\n" + rotated + " is a rotation of " + "\n" + string1
-        //       } 
-        //   }
-         
         }
+      }
 
-        // if (charMatch[char] = 1) {
-        //   for(i in charMatch){                      
-        //     let rotated = string2.slice(char) + string2.slice(0,char)
-        //     // console.log(rotated);
-        //     if (rotated === string1) {
-        //         return "\n" + rotated + " is a rotation of " + "\n" + string1
-        //       } else {
-        //         return "\n" +  rotated + " is not a rotation of " + "\n" + string1
-        //       }
-        //   }
+      // return "\n" + rotated + " is a rotation of " + "\n" + string1
 
-          // let rotated = string2.slice(tempKey) + string2.slice(0,tempKey)
-          // console.log(string1);
-          // console.log(string2.slice(tempKey));
-          // console.log(rotated);
-          // if (rotated === string1) {
-          //   return "\n" + rotated + " is a rotation of " + "\n" + string1
-          // } else {
-          //   return "\n" +  rotated + " is not a rotation of " + "\n" + string1
-          // }
-        // }
-        // if (tempKey.length > 1) {
-        //   for (i=0; i<tempKey.length; i++) {
-        //     if (str1[0] === tempKey[i]) {
-        //       console.log(tempKey);
-        //       return string2.slice(tempKey) + string2.slice(0, tempKey)
-        //     } else {
-        //       return false
-        //     }
-        //   }
-        // }
-      } 
-    } 
+
+      // }
+      // return "\n" +  rotated + " is not a rotation of " + "\n" + string1
+      // console.log(rotated);
+
+    }
+
+    // }
+    // if (char.length === 1) {
+    //     let rotated = string2.slice(char) + string2.slice(0,char)
+    //     // console.log(rotated);
+    //     if (rotated === string1) {
+    //         return "\n" + rotated + " is a rotation of " + "\n" + string1
+    //       } 
+    //   }
+
   }
-  console.log(setTemp(str1,str2));
-}
-  
-    // const tempIndex = () => {
 
-    //   for (i = 0; i < str1.length; i++) {
-    //     for (j = 0; j < str2.length; j++) {
-    //       if (str2[j] === str1[0]) {
-    //         let temp = str2[j]
-    //           if (temp > 1) {
-    //             for (chars of temp) {
-    //               if (temp[chars] === str1[0]) {
-    //               temp = Object.keys(str2[j])
-                    
-    //                 console.log(chars)
-    //               }
-    //             }
-    //           } 
-    //         // break
-    //         // console.log(temp);
-    //         // console.log(Object.keys(temp));
-    //         // let newTemp = str2.slice(temp,N)
-    //         // console.log(str2.slice(temp,N));
-    //         // console.log(newTemp);
-    //         let newTemp = Object.keys(str2[j])
-    //         console.log(newTemp);
-  
-    //       }
-        
-      
+  // if (charMatch[char] = 1) {
+  //   for(i in charMatch){                      
+  //     let rotated = string2.slice(char) + string2.slice(0,char)
+  //     // console.log(rotated);
+  //     if (rotated === string1) {
+  //         return "\n" + rotated + " is a rotation of " + "\n" + string1
+  //       } else {
+  //         return "\n" +  rotated + " is not a rotation of " + "\n" + string1
+  //       }
+  //   }
+
+  // let rotated = string2.slice(tempKey) + string2.slice(0,tempKey)
+  // console.log(string1);
+  // console.log(string2.slice(tempKey));
+  // console.log(rotated);
+  // if (rotated === string1) {
+  //   return "\n" + rotated + " is a rotation of " + "\n" + string1
+  // } else {
+  //   return "\n" +  rotated + " is not a rotation of " + "\n" + string1
+  // }
+  // }
+  // if (tempKey.length > 1) {
+  //   for (i=0; i<tempKey.length; i++) {
+  //     if (str1[0] === tempKey[i]) {
+  //       console.log(tempKey);
+  //       return string2.slice(tempKey) + string2.slice(0, tempKey)
+  //     } else {
+  //       return false
+  //     }
+  //   }
+  // }
+  console.log(setTemp(str1, str2));
+}
+
+
+// const tempIndex = () => {
+
+//   for (i = 0; i < str1.length; i++) {
+//     for (j = 0; j < str2.length; j++) {
+//       if (str2[j] === str1[0]) {
+//         let temp = str2[j]
+//           if (temp > 1) {
+//             for (chars of temp) {
+//               if (temp[chars] === str1[0]) {
+//               temp = Object.keys(str2[j])
+
+//                 console.log(chars)
+//               }
+//             }
+//           } 
+//         // break
+//         // console.log(temp);
+//         // console.log(Object.keys(temp));
+//         // let newTemp = str2.slice(temp,N)
+//         // console.log(str2.slice(temp,N));
+//         // console.log(newTemp);
+//         let newTemp = Object.keys(str2[j])
+//         console.log(newTemp);
+
+//       }
+
+
 //       }
 //   }
 // }

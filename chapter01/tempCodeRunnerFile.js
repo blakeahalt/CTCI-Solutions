@@ -1,1 +1,3 @@
-e.log(checkPermute('aba', 'aaba'), false);
+ (rotated === string1) {
+            return "\n" + rotated + " is a rotation of " + "\n" + string1
+          }
