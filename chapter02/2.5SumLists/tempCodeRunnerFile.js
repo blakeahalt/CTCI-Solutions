@@ -1,6 +1,4 @@
-ar printList = function(a) {
-    while (a !== null) {
-      console.log(a.value);
-      a = a.next;
-    }
-  };
+t2) {
+      //   carry += current2.val;
+      //   current2 = current2.next;
+      // }
