@@ -1,20 +1,17 @@
-w Node(3)
-// const b = new Node(6)
-// const c = new Node(1)
-// const d = new Node(12)
-// const e = new Node(5)
-// const f = new Node(8)
-// const g = new Node(2)
-// const h = new Node(4)
-// const i = new Node(9)
-// const j = new Node(7)
+
+// var a = new LinkedList(2)
+// var b = new LinkedList(5)
+// var c = new LinkedList(14)
+// var d = new LinkedList(29)
 
 // a.next = b
 // b.next = c
 // c.next = d
-// d.next = e
+
+// var e = new LinkedList(10)
+// var f = new LinkedList(14)
+// var g = new LinkedList(29)
+
 // e.next = f
 // f.next = g
-// g.next = h
-// h.next = i
-// i.next = j
+// // g.next = h

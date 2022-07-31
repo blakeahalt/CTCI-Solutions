@@ -43,16 +43,20 @@ function sumList (head1, head2) {
   
   while (current1 || current2 || carry) {
     currSum = current1.val + current2.val
+    // console.log(currSum);  // 12, 10, 8
     // if (current1 && current2) {
     carry += currSum
     // console.log('carry:', carry); // 12, 11, 9
     current1 = current1.next
     current2 = current2.next
-    // } 
+    // console.log(current1);  // Node{1, next{6, next:null}}, Node{6, next:null}, null  *interates through linked list
+    // }  
     
     current3.next = new Node(carry % 10)
     // console.log('current3.next:', current3.next); // Node{2, next:null}, Node{1, next:null}, Node{9, next:null}
     current3 = current3.next
+    // console.log(current3);  // Node{2, next:null}, Node{1, next:null}, Node{9, next:null}
+    // console.log(current3.next);  // null, null, null
     carry = carry >= 10 ? 1 : 0
     // console.log('last carry:', carry); // 1, 1, 0
   }
