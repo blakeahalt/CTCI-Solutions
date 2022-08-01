@@ -12,6 +12,23 @@ var LinkedList = function (val) {
 };
 
 
+var a = new Node(2)
+var b = new Node(5)
+var c = new Node(14)
+var d = new Node(29)
+
+a.next = b
+b.next = c
+c.next = d
+
+var e = new Node(10)
+var f = new Node(14)
+var g = new Node(29)
+
+e.next = f
+f.next = g
+// g.next = h
+
 // var a = new LinkedList(2)
 // var b = new LinkedList(5)
 // var c = new LinkedList(14)
@@ -29,30 +46,42 @@ var LinkedList = function (val) {
 // f.next = g
 // // g.next = h
 
-const intersection = function (head1, head2) {
+function intersection (head1, head2) {
   // The null checking code will handle lists with no loops.
+  let current1 = head1
+  // console.log('head1:', current1);
+  // console.log('head1.next:', head1.next);
+  // console.log('current1.next:', current1.next);
+  let current2 = head2
+  // console.log('head2:',current2);
+  
   if (head1 === null || head2 === null) {
     return null
   }
-  let current1 = head1
-  let current2 = head2
 
   while (current1 !== current2) {
     
-    if (current1 === current2) {
-      return current1
-    }
-    
-    if (current1 === null) {
-      current1 = head2
-    }
-    if (current2 === null) {
-      current2 = head1
-    }
     current1 = current1.next
+    console.log('c1->c1.next:',current1);
     current2 = current2.next
+    console.log('c2->c2.next:',current2);
+
+    if(current1 === current2) return current1
+    // console.log('c1===c2:',current1);
+    if (current1 === null) current1 = head2
+      // console.log('should be head2:', current1);
+    
+    if (current2 === null) current2 = head1
+      // console.log('should be head1:', current2);
+    // console.log(current1);
+    // console.log(current2);
   }
+  // console.log(current1);
   return current1
+};
+
+
+// console.log(intersection(a,e));
   // do {
   //   hare = hare.next
   //   tortoise = tortoise.next
@@ -68,7 +97,6 @@ const intersection = function (head1, head2) {
   // }
 
   // return hare
-};
 
 
 // OTHER SOLUTION
@@ -85,7 +113,7 @@ const intersection = function (head1, head2) {
 //    29
 // */
 
-// function getIntersectionNode(headA, headB) {
+// function intersection(headA, headB) {
 //   let currA = headA;
 //   let currB = headB;
 //   let lengthA = 0;
@@ -235,24 +263,8 @@ var printList = function (a) {
 // c1.next = d1;
 
 
-var a = new LinkedList(2)
-var b = new LinkedList(5)
-var c = new LinkedList(14)
-var d = new LinkedList(29)
-
-a.next = b
-b.next = c
-c.next = d
-
-var e = new LinkedList(10)
-var f = new LinkedList(14)
-var g = new LinkedList(29)
-
-e.next = f
-f.next = g
-// g.next = h
 
 
 var intersectNode = intersection(a, e);
-
-printList(intersection(a,e));
+print(intersection(a,e));
+console.log(intersection(a,e));
