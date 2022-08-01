@@ -1,5 +1,36 @@
-// remiveDups redone
-const LinkedList = require("../util/LinkedListX");
+
+class Node {
+	constructor(val) {
+		this.val = val;
+		this.next = null
+	}
+}
+
+const a = new Node(3)
+const b = new Node(6)
+const c = new Node(6)
+const d = new Node(12)
+const e = new Node(5)
+const f = new Node(8)
+const g = new Node(6)
+const h = new Node(4)
+const i = new Node(6)
+const j = new Node(7)
+const k = new Node(10)
+const l = new Node(18)
+
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+e.next = f
+f.next = g
+g.next = h
+h.next = i
+i.next = j
+j.next = k
+k.next = l
+// l.next = m
 
 // function removeDuplicates(list) {
 //   const _set = new Set();
@@ -47,32 +78,66 @@ const LinkedList = require("../util/LinkedListX");
 //   return list
 // }
 
-function removeDuplicates (list) {
-  let set  = new Set()
-  let prev = null
-  let curr = list.head
+function removeDuplicates(head) {
+  const map = {};
 
-  while (curr) {
-    if (set.has(curr.value)) {
-      let elem = curr
-      prev.next = curr.next
-      curr = curr.next
-      elem.next = null
+  let current = head;
+  let previous = null;
+
+  while (current) {
+    if (current.val in map) {
+      previous.next = current.next;
+    } else {
+      map[current.val] = true;
+      previous = current;
     }
-    else {
-      set.add(curr.value)
-      prev = curr
-      curr = curr.next
-    }
+
+    current = current.next;
   }
-  return list
 }
+
+
+// function removeDuplicates (list) {
+//   let set  = new Set()
+//   let prev = null
+//   let curr = list.head
+
+//   while (curr) {
+//     if (set.has(curr.val)) {
+//       let elem = curr
+//       prev.next = curr.next
+//       curr = curr.next
+//       elem.next = null
+//     }
+//     else {
+//       set.add(curr.val)
+//       prev = curr
+//       curr = curr.next
+//     }
+//   }
+//   return list
+// }
 // quick test
-let list = new LinkedList();
-for (let elem of [1, 5, 1, 6, 8, 6, 8, 8, 8, 8]) {
-  list.append(elem);
+// let list = new LinkedList();
+// for (let elem of [1, 5, 1, 6, 8, 6, 8, 8, 8, 8]) {
+//   list.append(elem);
+// }
+const print = (node) => {
+  if (node === null) return;
+  console.log(node.val)
+  print(node.next)
 }
 
-removeDuplicates(list);
+var printList = function (a) {
+  while (a !== null) {
+    console.log(a.val);
+    a = a.next;
+  }
+};
 
-console.log(list._toArray()); // [1, 5, 6, 8]
+// console.log(removeDuplicates(a));
+const newHead = (removeDuplicates(a))
+printList(newHead)
+// printList(removeDuplicates(a));
+
+// console.log(list._toArray()); // [1, 5, 6, 8]

@@ -31,13 +31,16 @@ const deleteValue = (head, target) => {
 		return head.next
 	}
 	let prev = null
-	let curr = head
-	while (curr !== null) {
-		if (curr.val === target) {
-		prev.next = curr.next
+	let current = head
+	while (current !== null) {
+		if (current.val === target) {
+		prev.next = current.next
+		console.log('prev:',prev);
+		console.log('prev.next:',prev.next);
+		console.log('current:',current);
 		}
-		prev = curr
-		curr = curr.next
+		prev = current
+		current = current.next
 	
 	}
 	return head
@@ -71,11 +74,12 @@ const print = (node) => {
   print(node.next)
 }
 
+
 print(a)
 
 // const newHead = IterativeReverseList(a)		// working
-// const newHead = deleteValue(a, "h")	// working
-const newHead = recursiveReverseList(a)	// working
+const newHead = deleteValue(a, "c")	// working
+// const newHead = recursiveReverseList(a)	// working
 
 console.log('-')
 print(newHead)

@@ -5,18 +5,19 @@ class Node {
 	}
 }
 	
-const a = new Node("a")
-const b = new Node("b")
-const c = new Node("c")
-const d = new Node("d")
-const e = new Node("e")
-const f = new Node("f")
-const g = new Node("g")
-const h = new Node("h")
+const a = new Node("z")
+const b = new Node("p")
+const c = new Node("e")
+const d = new Node("l")
+const e = new Node("s")
+const f = new Node("i")
+const g = new Node("p")
+const h = new Node("r")
 const i = new Node("i")
-const j = new Node("j")
-const k = new Node("k")
-const l = new Node("l")
+const j = new Node("t")
+const k = new Node("f")
+const l = new Node("t")
+const m = new Node("w")
 
 // const a = new Node(3)
 // const b = new Node(6)
@@ -35,13 +36,15 @@ a.next = b
 b.next = c
 c.next = d
 d.next = e
-e.next = f
+// e.next = f
 
+f.next = g
 g.next = h
 h.next = i
 i.next = j
 j.next = k
 k.next = l
+l.next = m
      
 /* 
 Given 2 linked lists, create a list that alternates the nodes from each list, starting at the heads of each.
@@ -84,7 +87,7 @@ const print = (node) => {
 // const newHead = IterativeReverseList(a)		// working
 // const newHead = deleteValue(a, "d")	// working
 // const newHead = recursiveReverseList(a)	// working
-const newHead = zipperLists(a,g)	
+const newHead = zipperLists(a,f)	
 
 
 console.log('-')
