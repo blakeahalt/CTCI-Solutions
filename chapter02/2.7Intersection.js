@@ -67,6 +67,7 @@ h.next = e
         // };
         
 // MY SOLUTION 
+insert
 function intersection(head1, head2) {
   let current1 = head1
   let current2 = head2
